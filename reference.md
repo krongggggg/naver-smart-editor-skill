@@ -41,7 +41,7 @@
 
 ```json
 {
-  "category": "앱테크",
+  "category": "일상",
   "tags": ["a", "b"],
   "openType": "public",
   "time": "now",
@@ -97,4 +97,4 @@
 | Variable | Default | Purpose |
 |----------|---------|---------|
 | `CDP_PORT` | `9223` | Chrome DevTools port |
-| `SMART_EDITOR_ROOT` | `/Users/macmini/orca/projects/스마트 에디터 cli` | CLI project path |
+| `SMART_EDITOR_ROOT` | _(required)_ | Path to `naver-smart-editor-cli` clone |
