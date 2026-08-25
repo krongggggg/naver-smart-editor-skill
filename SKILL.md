@@ -9,16 +9,19 @@ Automates **Smart Editor ONE** on an already-open Naver blog write page through 
 
 ## CLI project root
 
-Default install path (override with env `SMART_EDITOR_ROOT`):
+Clone the repo and set `SMART_EDITOR_ROOT` to your checkout path:
 
-```
-/Users/macmini/orca/projects/스마트 에디터 cli
+```bash
+git clone https://github.com/YOUR_ORG/naver-smart-editor-cli.git
+cd naver-smart-editor-cli
+npm install
+export SMART_EDITOR_ROOT="$(pwd)"
 ```
 
 All commands below use:
 
 ```bash
-SE="${SMART_EDITOR_ROOT:-/Users/macmini/orca/projects/스마트 에디터 cli}"
+SE="${SMART_EDITOR_ROOT:?set SMART_EDITOR_ROOT to your clone path}"
 ```
 
 ## Prerequisites (check first)
@@ -52,7 +55,7 @@ Set `CDP_PORT` if not 9223.
 ## Method 1: CLI
 
 ```bash
-SE="${SMART_EDITOR_ROOT:-/Users/macmini/orca/projects/스마트 에디터 cli}"
+SE="${SMART_EDITOR_ROOT:?}"
 
 node "$SE/bin/smart-editor.js" title set "글 제목"
 node "$SE/bin/smart-editor.js" text write "본문"
@@ -60,7 +63,7 @@ node "$SE/bin/smart-editor.js" format bold
 node "$SE/bin/smart-editor.js" module table
 node "$SE/bin/smart-editor.js" image url https://example.com/a.jpg
 node "$SE/bin/smart-editor.js" save
-node "$SE/bin/smart-editor.js" publish config --json '{"category":"앱테크","tags":["퀴즈"],"openType":"public","confirm":false}'
+node "$SE/bin/smart-editor.js" publish config --json '{"category":"일상","tags":["메모"],"openType":"public","confirm":false}'
 ```
 
 Help: `node "$SE/bin/smart-editor.js" help`
@@ -76,8 +79,7 @@ See [examples.md](examples.md) for templates.
 ## Method 3: Node library
 
 ```javascript
-import { connect } from '/Users/macmini/orca/projects/스마트 에디터 cli/src/index.js';
-// or: process.env.SMART_EDITOR_ROOT + '/src/index.js'
+import { connect } from './src/index.js'; // from project root
 
 const { editor, modules, publish, disconnect } = await connect({ port: 9223 });
 await editor.setTitle('제목');
