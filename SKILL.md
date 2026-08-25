@@ -1,6 +1,6 @@
 ---
 name: naver-smart-editor
-description: Controls Naver Blog Smart Editor ONE via CDP (port 9223). Use when writing or publishing Naver blog posts programmatically, automating the smart editor toolbar, setting title/body/tags, or when the user mentions smart-editor CLI, agent-browser 9223, or blog.naver.com write page.
+description: Controls Naver Blog Smart Editor ONE via CDP (port 9223). Use when writing or publishing Naver blog posts programmatically, automating the smart editor toolbar, setting title/body/tags, or when the user mentions smart-editor CLI, CDP 9223, or blog.naver.com write page.
 ---
 
 # Naver Smart Editor CLI
@@ -26,7 +26,7 @@ SE="${SMART_EDITOR_ROOT:?set SMART_EDITOR_ROOT to your clone path}"
 
 ## Prerequisites (check first)
 
-1. **CDP** on `127.0.0.1:9223` — `agent-browser autoconnect 9223`
+1. **CDP** on `127.0.0.1:9223` — Chrome with `--remote-debugging-port=9223`
 2. **Write page open** — `https://blog.naver.com/{blogId}?Redirect=Write&categoryNo=...`
 3. **Editor loaded** — PostWriteForm iframe ready
 4. **Dependencies** — `npm install` in `$SE`
