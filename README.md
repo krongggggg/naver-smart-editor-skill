@@ -12,4 +12,4 @@ Or invoke in Cursor: `/naver-smart-editor`
 
 ## CLI project
 
-Set `SMART_EDITOR_ROOT` to your [naver-smart-editor-cli](https://github.com/krongggggg/naver-smart-editor-cli) checkout.
+Set `SMART_EDITOR_ROOT` to your `naver-smart-editor-cli` checkout.
